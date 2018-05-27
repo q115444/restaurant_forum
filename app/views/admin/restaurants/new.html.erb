@@ -1,0 +1,22 @@
+<%= form_for [:admin , @restaurant] do |f| %>
+ 
+ <%= f.label :name ,"Name"%>
+ <%= f.text_field :name %>
+
+  <%= f.label :tel ,'Tel'%>
+  <%= f.text_field :tel %>
+  
+   <%= f.label :address ,'Address'%>
+   <%= f.text_field :address %>
+
+   <%= f.label :opening_hours ,'Opening_hours'%>
+   <%= f.text_field :opening_hours %>
+
+  <%= f.label :descrption ,'Desrption'%>
+  <%= f.text_area :descrption %>
+
+  <%= f.submit %>
+
+  <% end %>
+
+  
