@@ -8,3 +8,10 @@ Descrption:<%= @restaurant.descrption %><br>
 <br>
 
 <%= link_to 'Back to index',admin_restaurants_path %>
+
+
+<%= link_to "Prev Restaurant", admin_restaurant_path(@restaurant.prev) if @restaurant.prev  %>
+
+ 
+
+ <%= link_to "Next Restaurant", admin_restaurant_path(@restaurant.next) if @restaurant.next%>
