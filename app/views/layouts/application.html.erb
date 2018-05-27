@@ -17,7 +17,7 @@
            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
     <span class="sr-only">Toggle navigation</span>
     <span class="icon-bar"></span>            <span class="icon-bar"></span>
-   <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="#">餐廳評論網</a>
         </div>
@@ -41,7 +41,10 @@
     <% if flash[:notice] %>
     <div class="container">
       <div class="row">
-        <div class="alert alert-success"><%= notice%></div>
+        <div class ="alert alert-success alert-dismissible" role="alert">
+          <botton type="button" class="close" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times;</span></botton>
+          <%= notice %>
+        </div>  
       </div>
     </div>    
     <% end %>
@@ -49,7 +52,10 @@
     <% if flash[:alert] %>
     <div class="container">
       <div class="row">
-        <div class="alert alert-dager"><%= alert %></div>
+        <div class ="alart alert-danger alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times;</span></button>
+          <%= alert %>      
+        </div>
       </div>  
     </div>  
 
