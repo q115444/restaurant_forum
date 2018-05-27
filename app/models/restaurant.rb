@@ -1,10 +1,9 @@
 class Restaurant < ApplicationRecord
+  mount_uploader :image, PhotoUploader
+  mount_uploader :image, PhotoImageUploader
   validates_presence_of :name
 
   
-  mount_uploader :image, PhotoUploader
-  #PhotoUploader
-
 #同學補充 上下頁
 
   def prev

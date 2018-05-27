@@ -29,10 +29,10 @@
   <%= f.text_area :description,class: "form-control" %>
 </div>
 
-  <%= f.label :image, "Photo"%>
-  <%= image_tag @restaurant.image,width: '300px' if @restaurant.image? %>
-  <% f.file_field :image %>
-
+   <%= f.label :image, "Photo" %>
+  <%= image_tag @restaurant.image, width: '300px' if @restaurant.image? %>
+  <%= f.file_field :image %>
+  
   <%= f.submit %>
 
   <% end %>
