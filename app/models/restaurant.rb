@@ -1,6 +1,6 @@
 class Restaurant < ApplicationRecord
   mount_uploader :image, PhotoUploader
-  mount_uploader :image, PhotoImageUploader
+  #mount_uploader :image, PhotoImageUploader
   validates_presence_of :name
 
   

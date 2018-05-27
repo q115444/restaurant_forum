@@ -6,6 +6,7 @@ Address:<%= @restaurant.address %><br>
 Descrption:<%= @restaurant.descrption %><br>
 
 <br>
+<%= image_tag @restaurant.image,width:'600px' %>
 
 <%= link_to 'Back to index',admin_restaurants_path %>
 
@@ -13,5 +14,4 @@ Descrption:<%= @restaurant.descrption %><br>
 <%= link_to "Prev Restaurant", admin_restaurant_path(@restaurant.prev) if @restaurant.prev  %>
 
  
-
  <%= link_to "Next Restaurant", admin_restaurant_path(@restaurant.next) if @restaurant.next%>
