@@ -7,8 +7,8 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+
+<body>
 <!-- 導覽列 -->
  <nav class="navbar navbar-default">
        <div class="container-fluid">
@@ -38,6 +38,22 @@
       </div>
     </nav>
     
+    <% if flash[:notice] %>
+    <div class="container">
+      <div class="row">
+        <div class="alert alert-success"><%= notice%></div>
+      </div>
+    </div>    
+    <% end %>
+       
+    <% if flash[:alert] %>
+    <div class="container">
+      <div class="row">
+        <div class="alert alert-dager"><%= alert %></div>
+      </div>  
+    </div>  
+
+    <% end %>
 
     <%= yield %>
   </body>
