@@ -1,3 +1,6 @@
+<div class="container">
+  <div class="row" >
+
 <% if @restaurant.errors.any? %>
  <<h2>We have some errors here !</h2>
  <ul>
@@ -5,6 +8,7 @@
    <li><%= msg %></li>
    <% end %>
  </ul>
+ <hr>
 <% end %>
 
 <%= form_for [:admin , @restaurant] do |f| %>
@@ -14,15 +18,15 @@
  </div>
  <div classs="form-group">  
   <%= f.label :tel ,'Tel'%>
-  <%= f.text_field :tel %>
+  <%= f.text_field :tel,class: "form-control" %>
  </div>
   <div classs="form-group">
    <%= f.label :address ,'Address'%>
-   <%= f.text_field :address %>
+   <%= f.text_field :address,class: "form-control" %>
  </div>
  <div classs="form-group">
    <%= f.label :opening_hours ,'Opening_hours'%>
-   <%= f.text_field :opening_hours %>
+   <%= f.text_field :opening_hours,class: "form-control" %>
  </div>
  <div classs="form-group">
   <%= f.label :description ,'Desription'%>
@@ -34,8 +38,11 @@
   <%= f.file_field :image %>
 </div>    
 
-
-  <%= f.submit %>
+   <div class="form-group">
+     <%= f.submit class: "btn btn-primary"%>
+  </div>
 
   <% end %>
+ </div>
+</div>
 

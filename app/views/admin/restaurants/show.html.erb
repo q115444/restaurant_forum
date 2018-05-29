@@ -23,8 +23,9 @@
         <hr>
        </div>
      </div>
+  
+  <%= link_to "Prev Restaurant", admin_restaurant_path(@restaurant.prev) if @restaurant.prev  %>
 
-<%= link_to "Prev Restaurant", admin_restaurant_path(@restaurant.prev) if @restaurant.prev  %>
 <hr>
 
-  <%= link_to "Next Restaurant", admin_restaurant_path(@restaurant.next) if @restaurant.next%>
+    <%= link_to "Next Restaurant", admin_restaurant_path(@restaurant.next) if @restaurant.next%>
