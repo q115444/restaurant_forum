@@ -1,0 +1,2 @@
+class Categorynew < ApplicationRecord
+end
