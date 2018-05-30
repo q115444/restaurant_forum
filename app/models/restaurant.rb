@@ -3,7 +3,8 @@ class Restaurant < ApplicationRecord
   #mount_uploader :image, PhotoImageUploader
   validates_presence_of :name
 
-  
+  belongs_to :category, optional: true
+
 #同學補充 上下頁
 
   def prev

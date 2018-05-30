@@ -1,2 +1,0 @@
-class Categorynew < ApplicationRecord
-end
