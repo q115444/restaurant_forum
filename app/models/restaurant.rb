@@ -3,9 +3,9 @@ class Restaurant < ApplicationRecord
   #mount_uploader :image, PhotoImageUploader
   validates_presence_of :name
 
-  belongs_to :category
+  belongs_to :category,optional: true 
 
-  delegate :name, to: :category, prefix: true, allow_nil: true
+  #delegate :name, to: :category, prefix: true, allow_nil: true
 
 #同學補充 上下頁
 
