@@ -11,6 +11,14 @@ resources :restaurants, only: [:index, :show]
    resources :restaurants
    resources :categories 
    root "restaurants#index"
-   
+ 
+
+  resources :restaurants, only:[:index, :show] do 
+ 
+     resources :commets, only: [:create, :destroy]
+
+  end    
+  
+
  end
 end
