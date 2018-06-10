@@ -15,10 +15,13 @@ resources :restaurants, only: [:index, :show]
 
   resources :restaurants, only:[:index, :show] do 
  
-     resources :commets, only: [:create, :destroy]
+     resources :comments, only: [:create, :destroy]
 
   end    
   
+
+
+
 
  end
 end
