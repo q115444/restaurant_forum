@@ -1,5 +1,5 @@
 class Restaurant < ApplicationRecord
-  has_many :commets
+  has_many :comments
 
   mount_uploader :image, PhotoUploader
   #mount_uploader :image, PhotoImageUploader
