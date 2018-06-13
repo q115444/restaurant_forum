@@ -36,11 +36,7 @@
 <div classs="form-group">
    <%= f.label :image, "Photo" %>
 
-<% if @restaurant.image? %>
-   <%= image_tag restaurant.image, width: '300px' %> 
-<% else %>
-   < span class="glyphicon glyphicon-picture">< /span>
- <% end %>
+
 
   <%= f.file_field :image %>
 </div>    

@@ -8,7 +8,7 @@ class Admin::CategoriesController < Admin::BaseController
     @categories = Category.all
 
     if params[:id]
-      @set_category
+      @category = Category.find(params[:id])
     else
       @category = Category.new
     end
@@ -27,7 +27,7 @@ class Admin::CategoriesController < Admin::BaseController
   end
 
   def update
-    @set_category
+    
 
     if @category.update(category_params)
        redirect_to admin_categories_path
@@ -40,7 +40,7 @@ class Admin::CategoriesController < Admin::BaseController
   end
 
   def destroy
-    @set_category
+    
     @category.destroy
     flash[:alert] = "category was successfully deleted "
     redirect_to admin_categories_path
