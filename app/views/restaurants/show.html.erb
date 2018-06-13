@@ -7,8 +7,12 @@
     </div>
 
     <div class="col-md-4">
+      <% if @restaurant.image? %>
        <%= image_tag @restaurant.image,class: "img-responsive center-block" %>
-       
+       <% else %>
+       <%= image_tag "https://fakeimg.pl/250x100/"%>
+       <% end %>
+
        <br>
        <div class="well">
          <ul class="list-unstyled">

@@ -3,6 +3,9 @@ class UsersController < ApplicationController
 
 
   def show
+    @commented_restaurants = @user.restaurants.uniq
+    @commented_restaurants = @user.restaurants.page(params[:page]).per(50)
+  
   end   
 
   def edit 
@@ -24,7 +27,7 @@ class UsersController < ApplicationController
   
   def user_params
   
-    params.require(:user).permit(:name, :intro)
+    params.require(:user).permit(:name, :intro, :avatar)
 
   end  
 
