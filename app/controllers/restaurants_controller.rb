@@ -20,5 +20,10 @@ class RestaurantsController < ApplicationController
   #limit(10) 最多傳回幾筆資料，這裡回傳前10筆
  end
 
+ def dashboard
+   @restaurant = Restaurant.find(params[:id])
+ end 
+
+
  end
 
