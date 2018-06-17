@@ -11,14 +11,16 @@ Rails.application.routes.draw do
 
    collection do 
      get :feeds 
-
+  
    end 
 
   #瀏覽個別餐廳的優惠活動 Dashboard
    member do
      get :dashboard
    end   
-
+  
+  #collection 使用複數
+  #member 使用單數
   end  
   
   resources :users,only: [:show, :edit, :update]

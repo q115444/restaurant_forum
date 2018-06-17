@@ -1,5 +1,5 @@
 class Restaurant < ApplicationRecord
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   mount_uploader :image, PhotoUploader
   #mount_uploader :image, PhotoImageUploader

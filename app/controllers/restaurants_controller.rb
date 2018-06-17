@@ -12,5 +12,13 @@ class RestaurantsController < ApplicationController
   @comment = Comment.new
  end 
  
-end
+ def feeds 
+  @recent_restaurants = Restaurant.all.order(created_at: :desc).limit(10)
+  @recent_comments = Comment.all.order(created_at: :desc).limit(10)
+
+  #order(created_at: :desc)指定使用哪個欄位，並設定升序asc還是降序desc
+  #limit(10) 最多傳回幾筆資料，這裡回傳前10筆
+ end
+
+ end
 
