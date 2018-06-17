@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :comments
+  has_many :comments, dependent: :restrict_with_error
   has_many :restaurants, through: :comments
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
