@@ -17,8 +17,14 @@ Rails.application.routes.draw do
   #瀏覽個別餐廳的優惠活動 Dashboard
    member do
      get :dashboard
+
+     #收藏/取消收藏
+     post :favorite
+     post :unfavorite
+    
    end   
-  
+   #因為favorite不需要樣板 所以習慣用post
+
   #collection 使用複數
   #member 使用單數
   end  
