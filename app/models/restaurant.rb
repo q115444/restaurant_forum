@@ -13,7 +13,9 @@ class Restaurant < ApplicationRecord
 
   belongs_to :category,optional: true 
   
-
+   def is_favorited?(user)
+    self.favorited_users.include?(user)
+   end  
 
   #delegate :name, to: :category, prefix: true, allow_nil: true
 
