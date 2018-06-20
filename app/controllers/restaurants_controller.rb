@@ -46,7 +46,7 @@ class RestaurantsController < ApplicationController
   @restaurant.likes.create!(user: current_user)
   redirect_back(fallback_location: root_path)
  end
- 
+        
  def unlike
   @restaurant = Restaurant.find(params[:id])
  
@@ -55,6 +55,10 @@ class RestaurantsController < ApplicationController
   likes.destroy_all
   redirect_back(fallback_loction: root_path)
 
+ end 
+
+ def ranking
+  @restaurants = Restaurant.order(favorites_count: :desc).limit(10)
  end 
 
   def dashboard
