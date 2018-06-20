@@ -11,7 +11,8 @@ Rails.application.routes.draw do
 
    collection do 
      get :feeds 
-  
+     get :ranking
+     
    end 
 
   #瀏覽個別餐廳的優惠活動 Dashboard
