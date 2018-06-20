@@ -22,7 +22,7 @@
 .my-restaurant{
   display: inline-block;
   text-align: center;
-  padding: 8px;
+  padding: 7px 7px 0 7px;
 }
 
 .my-restaurant > div {
@@ -55,4 +55,21 @@
   float:none;
   display: inline-block
 
+}
+
+.ranking-item{
+  margin-bottom: 15px;
+}
+.ranking-item img{
+  width: 160px;
+  hight: 150px;
+}
+
+.user-item {
+  margin-bottom: 15px;
+}
+
+.user-item img{
+  width: 128px;
+  hight: 128px;
 }

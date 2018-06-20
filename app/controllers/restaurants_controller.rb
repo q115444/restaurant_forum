@@ -46,7 +46,7 @@ class RestaurantsController < ApplicationController
   @restaurant.likes.create!(user: current_user)
   redirect_back(fallback_location: root_path)
  end
-        
+
  def unlike
   @restaurant = Restaurant.find(params[:id])
  
@@ -61,12 +61,12 @@ class RestaurantsController < ApplicationController
   @restaurants = Restaurant.order(favorites_count: :desc).limit(10)
  end 
 
-  def dashboard
+ def dashboard
 
-   @restaurant = Restaurant.find(params[:id])
+  @restaurant = Restaurant.find(params[:id])
 
  end 
 
 
- end
+end
 
