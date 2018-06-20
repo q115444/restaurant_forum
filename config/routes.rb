@@ -21,7 +21,9 @@ Rails.application.routes.draw do
      #收藏/取消收藏
      post :favorite
      post :unfavorite
-    
+     post :like
+     post :unlike
+
    end   
    #因為favorite不需要樣板 所以習慣用post
 

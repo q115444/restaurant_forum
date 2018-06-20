@@ -5,8 +5,12 @@ class User < ApplicationRecord
   
   #使用者收藏很多餐廳
   has_many :favorites, dependent: :destroy
-  has_many :favorites_restaurants, through: :favorites, source: :restaurant
-                                                        #source 指的是model name
+  has_many :favorited_restaurants, through: :favorites, source: :restaurant
+  #like
+  has_many :likes, dependent: :destroy
+  has_many :liked_restaurants, through: :likes, source: :restaurant
+
+  #source 指的是model name
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
