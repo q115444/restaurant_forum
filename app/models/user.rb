@@ -11,6 +11,13 @@ class User < ApplicationRecord
   has_many :liked_restaurants, through: :likes, source: :restaurant
 
   #source 指的是model name
+
+  #一個user擁有很多追蹤紀錄
+  #透過追蹤紀錄，一個user追蹤很多其他user
+  has_many :followships, dependent: :destroy
+  has_many :following, throgh: :followships
+
+  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
