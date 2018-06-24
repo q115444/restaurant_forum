@@ -1,6 +1,13 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show ,:edit, :update]
 
+   def index 
+   
+     @users = User.all 
+   
+   end  
+    
+   
 
   def show
     @commented_restaurants = @user.restaurants.uniq
@@ -20,7 +27,7 @@ class UsersController < ApplicationController
   end  
 
   private
-
+  
   def set_user
     @user = User.find(params[:id])
   end
@@ -30,5 +37,7 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :intro, :avatar)
 
   end  
-
+  
+  
+ 
 end
