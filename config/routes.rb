@@ -2,11 +2,15 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :categories, only: :show
-
-  resources :restaurants, only:[:index, :show] do 
+  root "restaurants#index"
+  
  
   resources :comments, only: [:create, :destroy] 
-  
+
+  resources :users, only: [:index, :show, :edit, :update]
+  resources :followships, only: [:create, :destroy] 
+
+  resources :restaurants, only:[:index, :show] do 
   #瀏覽所有餐廳的最新動態
 
    collection do 
@@ -32,21 +36,12 @@ Rails.application.routes.draw do
   #member 使用單數
   end  
   
-  resources :users,only: [:show, :edit, :update]
-
- root "restaurants#index"
- 
- namespace :admin do
-   resources :restaurants
-   resources :categories 
-   root "restaurants#index"
- 
-
-    
   
-
-
-
-
- end
+  
+ 
+   namespace :admin do
+     resources :restaurants
+     resources :categories 
+     root "restaurants#index"
+   end
 end

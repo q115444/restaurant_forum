@@ -13,9 +13,9 @@ class User < ApplicationRecord
   #source 指的是model name
 
   #一個user擁有很多追蹤紀錄
-  #透過追蹤紀錄，一個user追蹤很多其他user
+  #透過追蹤紀錄，一個user追蹤很多其他user 不需要另加 source，Rails 可從 Followship Model 設定來判斷 followings 指向 User Model
   has_many :followships, dependent: :destroy
-  has_many :following, throgh: :followships
+  has_many :following, through: :followships
 
   
   # Include default devise modules. Others available are:
