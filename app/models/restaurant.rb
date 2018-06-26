@@ -29,6 +29,11 @@ class Restaurant < ApplicationRecord
    end   
   #delegate :name, to: :category, prefix: true, allow_nil: true
 
+   def following?(user)
+    self.followings.include?(user)
+   end 
+   
+
 #同學補充 上下頁
 
   def prev

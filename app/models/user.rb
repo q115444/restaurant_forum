@@ -15,7 +15,7 @@ class User < ApplicationRecord
   #一個user擁有很多追蹤紀錄
   #透過追蹤紀錄，一個user追蹤很多其他user 不需要另加 source，Rails 可從 Followship Model 設定來判斷 followings 指向 User Model
   has_many :followships, dependent: :destroy
-  has_many :following, through: :followships
+  has_many :followings, through: :followships
 
   
   # Include default devise modules. Others available are:
@@ -36,10 +36,13 @@ class User < ApplicationRecord
     end
   end
 
-
+  
   def admin?
     self.role == "admin"
   end  
-
+  
+  def following?(user)
+    self.followings.include?(user)
+  end
 
 end
