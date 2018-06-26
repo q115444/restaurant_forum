@@ -3,7 +3,7 @@
   <li>
   <%= x.name %>
   <%= link_to 'Follow', followships_path(following_id: x), method: :post %>
-
+  <%= link_to 'Unfollow', followship_path(x), method: :delete %>
   </li>
   <% end %>
 
