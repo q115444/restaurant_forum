@@ -45,7 +45,27 @@ namespace :dev do
     puts "now you have #{Comment.count} comment data"
 
     end
-      
 
+    task fake_favorites: :environment do
+      Favorite.destroy_all
+  
+      2000.times do
+        Favorite.create!(user: User.all.sample, restaurant: Restaurant.all.sample)
+      end
+      puts "have created 2000 fake favorites"
+      
+    end
+      
+    task fake_followships: :environment do
+      Followship.destroy_all
+  
+      User.all.each do |user|
+        5.times do 
+          user.followships.create(following_id: User.all.sample.id)
+        end
+      end
+      puts "have created 200 fake follow"
+      
+    end
 
 end
